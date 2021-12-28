@@ -12,6 +12,5 @@ def get_input_inum(max_num, text1, text2, typen=int):
             continue
         except ValueError:
             print(text2 + "\n")
-            print('just a silly line')
             continue
     return input_int
