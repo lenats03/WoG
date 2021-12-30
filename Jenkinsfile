@@ -6,7 +6,7 @@ node {
       }     
       stage('Build image') {         
        
-            app = docker.build("WoG/master")    
+            app = docker.build("WoG")
        }     
 
 }
