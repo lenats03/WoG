@@ -21,6 +21,7 @@ node {
 	stage('Push') {
             withDockerRegistry(credentialsId: 'dokcerhub_lenats', url: '') {
                  bat "docker push lenats/wog:$build_id"
+                 bat "docker push lenats/wog:latest"
             }
 
     }
