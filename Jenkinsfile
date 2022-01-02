@@ -9,17 +9,17 @@ node {
             bat "docker-compose build"
     }
     stage ('Run container'){
-            echo '$containername'
-            bat "docker-compose --project-name $containername up -d  --force-recreate"
+            echo '${containername}'
+            bat "docker-compose --project-name ${containername} up -d  --force-recreate"
             bat "docker ps"
             /* Run some tests which require MySQL */
     }
     stage('test'){
-            bat 'docker cp  ./scores.txt $containername:/app/'
+            bat 'docker cp  ./scores.txt ${containername}:/app/'
             bat 'C:/Users/Lenats/AppData/Local/Programs/Python/Python38/python.exe "C:/Users/Lenats/PycharmProjects/WorldOfGames/tests/e2e.py"'
     }
     stage ('kill container'){
-            bat "docker kill $containername"
+            bat "docker kill ${containername}"
     }
 	stage('Push') {
             withDockerRegistry(credentialsId: 'dokcerhub_lenats', url: '') {
