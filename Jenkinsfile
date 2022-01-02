@@ -1,7 +1,6 @@
 node {
     stage('Clone repository') {
-
-            checkout scm
+           checkout changelog: false, scm: [$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/lenats03/WoG.git']]]
     }
     stage('Build image') {
 
@@ -20,7 +19,10 @@ node {
             bat "docker kill wog_score_for_test"
     }
 	stage('Push') {
-            bat "docker push lenats/wog:$build_id"
+            withDockerRegistry(credentialsId: 'dokcerhub_lenats', url: '') {
+                 bat "docker push lenats/wog:$build_id"
+            }
+
     }
 
 }
