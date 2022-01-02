@@ -15,7 +15,7 @@ node {
     }
     stage('test'){
             bat 'docker cp  ./scores.txt d10c56315c7d:/app/'
-            bat 'python "C:/Users/Lenats/PycharmProjects/WorldOfGames/tests/e2e.py"'
+            bat 'C:/Users/Lenats/AppData/Local/Programs/Python/Python38/python.exe "C:/Users/Lenats/PycharmProjects/WorldOfGames/tests/e2e.py"'
     }
 
 }
