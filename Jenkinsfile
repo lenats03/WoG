@@ -1,6 +1,6 @@
 node {
        stage ('set containername') {
-            bat "set   containername = 'wog_test'"
+            bat "set containername = wog_test"
       }
 
     stage('Clone repository') {
