@@ -1,6 +1,6 @@
 node {
    environment {
-       $containername = "wog_test"
+      set  containername = "wog_test"
    }
 
     stage('Clone repository') {
