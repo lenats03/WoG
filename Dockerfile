@@ -8,3 +8,4 @@ WORKDIR /app
 
 EXPOSE 5001
 ENTRYPOINT [ "python" ]
+CMD [  "./MainScores.py" ]
