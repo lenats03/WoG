@@ -9,7 +9,7 @@ node {
             bat "docker-compose build"
     }
     stage ('Run '){
-            bat "docker-compose -p wog_score_for_test up -d  --force-recreate"
+            bat "docker-compose --project-name wog_score_for_test up -d  --force-recreate"
             bat "docker ps"
             /* Run some tests which require MySQL */
     }
