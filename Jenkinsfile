@@ -18,7 +18,7 @@ node {
             bat 'C:/Users/Lenats/AppData/Local/Programs/Python/Python38/python.exe "C:/Users/Lenats/PycharmProjects/WorldOfGames/tests/e2e.py"'
     }
     stage ('kill'){
-    bat "docker kill wog_score_for_test"
+    bat "docker kill wog_score_for_test_web_1"
     }
     stage push{
     }
