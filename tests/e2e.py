@@ -10,7 +10,7 @@ def test_scores_service():
         e_path = environ.get('cd_path') + '/chromedriver.exe'
         print (e_path)
         chrome_driver = webdriver.Chrome(executable_path=environ.get('cd_path')+'/chromedriver.exe')
-        page=chrome_driver.get("http://localhost:5001/scores")
+        page=chrome_driver.get("http://localhost:8777/scores")
         score=chrome_driver.find_element_by_id('score')
         current_score=int(score.text.replace('{', '').replace('}', ''))
         print (current_score)
