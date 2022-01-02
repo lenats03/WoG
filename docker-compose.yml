@@ -4,3 +4,4 @@ services:
     build: .
     ports:
       - "5001:8777"
+    command:   python MainScores.py &
