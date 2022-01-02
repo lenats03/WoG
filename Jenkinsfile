@@ -10,6 +10,7 @@ node {
             image_c = docker.build("wog:${env.BUILD_ID}")
     }
     stage ('Run and test'){
+        docker.run(image_c){}
         image_c.withRun(' -p 5001:8777') {c ->
             /* Wait until mysql service is up */
             docker.ps(){}
