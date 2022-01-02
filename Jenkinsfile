@@ -1,7 +1,7 @@
 node {
-   environment {
-        containername = 'wog_test'
-   }
+       stage ('set containername') {
+            bat "set   containername = 'wog_test'"
+      }
 
     stage('Clone repository') {
            checkout changelog: false, scm: [$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/lenats03/WoG.git']]]
