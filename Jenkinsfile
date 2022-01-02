@@ -20,7 +20,7 @@ node {
     stage ('kill'){
             bat "docker kill wog_score_for_test_web_1"
     }
-    stage push{
+    stage ('push'){
             bat "docker push lenats/wog:$build_id"
     }
 
