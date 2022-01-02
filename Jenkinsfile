@@ -1,6 +1,5 @@
 node {
     def rc
-    def image_c
     stage('Clone repository') {
 
             checkout scm
@@ -13,7 +12,6 @@ node {
             cmd 'docker run --rm wog:${env.BUILD_ID} '
             docker.ps(){}
             /* Run some tests which require MySQL */
-            rc = cmd 'python "C:/Users/Lenats/PycharmProjects/WorldOfGames/tests/e2e.py"'
-        }
+            cmd 'python "C:/Users/Lenats/PycharmProjects/WorldOfGames/tests/e2e.py"'
     }
 }
