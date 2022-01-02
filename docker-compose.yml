@@ -5,5 +5,5 @@ services:
     ports:
       - "8777:5001"
     image: "lenats/wog:${BUILD_ID}"
-    container_name: "${CONTAINERNAME}"
+    container_name: ${CONTAINERNAME}
 
