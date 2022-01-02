@@ -3,5 +3,6 @@ services:
   web:
     build: .
     ports:
-      - "5001:8777"
-    command:   python MainScores.py &
+      - "8777:5001"
+    image: "wog:${BUILD_ID}"
+    command:   python MainScores.py
