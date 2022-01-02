@@ -7,6 +7,7 @@ node {
     stage('Build image') {
 
             bat "docker-compose build"
+            bat "set CONTAINERNAME=$containername"
     }
     stage ('Run container'){
             echo '$containername'
