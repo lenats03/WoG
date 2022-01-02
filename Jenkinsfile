@@ -10,7 +10,7 @@ node {
             image_c = docker.build("wog:${env.BUILD_ID}")
     }
     stage ('Run and test'){
-        image_c.withRun(' -p 5001:8777') {c ->
+        image_c.withRun(' -p 8777:5001') {c ->
             /* Wait until mysql service is up */
             docker.ps(){}
             cmd 'while ! wog ping -h0.0.0.0 --silent; do sleep 1; done'
