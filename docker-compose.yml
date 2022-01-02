@@ -4,5 +4,6 @@ services:
     build: .
     ports:
       - "8777:5001"
-    image: "wog:${BUILD_ID}"
+    image: "lenats/wog:${BUILD_ID}"
+    container_name: wog_score_for_test
 
