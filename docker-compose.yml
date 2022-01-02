@@ -3,5 +3,4 @@ services:
   web:
     build: .
     ports:
-      - "5001:5001"
-    command:  nohup python MainScores.py &
+      - "5001:8777"
