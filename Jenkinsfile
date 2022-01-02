@@ -23,7 +23,7 @@ node {
             bat "docker kill wog_score_for_test"
     }
     stage ('login to dockerhub'){
-            bat 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+            bat 'echo %DOCKERHUB_CREDENTIALS_PSW% | docker login -u %DOCKERHUB_CREDENTIALS_USR% --password-stdin'
     }
     stage ('push to dockerhub'){
             bat "docker push lenats/wog:$build_id"
