@@ -5,4 +5,4 @@ services:
     ports:
       - "8777:5001"
     image: "wog:${BUILD_ID}"
-    command:   python MainScores.py
+
