@@ -1,7 +1,4 @@
 node {
-    environment {
-		DOCKERHUB_CREDENTIALS=credentials('dokcerhub_lenats')
-	}
     stage('Clone repository') {
 
             checkout scm
@@ -22,10 +19,7 @@ node {
     stage ('kill container'){
             bat "docker kill wog_score_for_test"
     }
-    stage ('login to dockerhub'){
-            bat 'echo %DOCKERHUB_CREDENTIALS_PSW% | docker login -u %DOCKERHUB_CREDENTIALS_USR% --password-stdin'
-    }
-    stage ('push to dockerhub'){
+	stage('Push') {
             bat "docker push lenats/wog:$build_id"
     }
 
