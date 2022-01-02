@@ -9,8 +9,8 @@ node {
             bat "docker-compose build"
     }
     stage ('Run container'){
-            echo '${containername}'
-            bat "docker-compose --project-name ${containername} up -d  --force-recreate"
+            echo '$containername'
+            bat "docker-compose --project-name $containername up -d  --force-recreate"
             bat "docker ps"
             /* Run some tests which require MySQL */
     }
