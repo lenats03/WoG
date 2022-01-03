@@ -10,6 +10,7 @@ node {
     stage('Build image') {
 
             bat "docker-compose build"
+            bat "docker tag lenats/wog:$build_id lenats/wog:latest"
     }
     stage ('Run container'){
 
