@@ -1,7 +1,7 @@
 node {
     def containername = "wog_test"
     stage ('env file'){
-    writeFile file: './.env', text: "containername:$wog_test"
+    writeFile file: './.env', text: "containername:$containername"
     }
 
     stage('Clone repository') {
