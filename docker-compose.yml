@@ -4,8 +4,7 @@ services:
     build: .
     ports:
       - "8777:5001"
-    image: "lenats/wog
-#    :${BUILD_ID}"
+    image: "lenats/wog" #    :${BUILD_ID}"
     container_name: $containername
   db:
     image: mysql:5.7
