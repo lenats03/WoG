@@ -28,7 +28,7 @@ services:
     volumes:
       - type: bind
         source: db-data
-        target: /var/lib/mysql/data
+        target: /var/lib/mysql
 
 volumes:
   db-data:
