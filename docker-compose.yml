@@ -7,7 +7,9 @@ services:
     image: "lenats/wog:${BUILD_ID}"
     container_name: $containername
   db:
+    build: .
     image: mysql:5.7
+    container_name: db
     restart: always
     environment:
       MYSQL_DATABASE: 'db'
