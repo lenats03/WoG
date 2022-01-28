@@ -6,9 +6,29 @@ services:
       - "8777:5001"
     image: "lenats/wog:${BUILD_ID}"
     container_name: $containername
-  dbb:
-     image: mysql:5.7
-     container_name: mysql_db
-     restart: always
-     environment:
-        - MYSQL_ROOT_PASSWORD="secret"
+  db:
+    image: mysql:5.7
+    container_name: db
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'db'
+      # So you don't have to use root, but you can if you like
+      MYSQL_USER: 'user'
+      # You can use whatever password you like
+      MYSQL_PASSWORD: 'password'
+      # Password for root access
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      # <Port exposed> : < MySQL Port running inside container>
+      - '3306:3306'
+    expose:
+      # Opens port 3306 on the container
+      - '3306'
+      # Where our data will be persisted
+    volumes:
+      - type: bind
+        source: db-data
+        target: /var/lib/mysql/data
+
+volumes:
+  db-data:
